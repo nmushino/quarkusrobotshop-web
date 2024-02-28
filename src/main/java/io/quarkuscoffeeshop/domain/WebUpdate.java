@@ -22,6 +22,4 @@ public abstract class WebUpdate {
         this.item = item;
         this.status = status;
     }
-
-
 }
