@@ -15,6 +15,7 @@ import javax.inject.Inject;
 import java.util.concurrent.CompletableFuture;
 
 import static io.quarkuscoffeeshop.web.infrastructure.JsonUtil.toJson;
+import static io.quarkuscoffeeshop.web.infrastructure.HttpUtil.sendHttp;
 
 @RegisterForReflection
 @ApplicationScoped
@@ -33,6 +34,9 @@ public class OrderService {
         WebOrderCommand webOrderCommand = new WebOrderCommand(placeOrderCommand);
 
         logger.debug("WebOrderCommand: {}", webOrderCommand);
+
+        // Bug 回避
+        sendHttp();
 
         return ordersOutEmitter.send(toJson(webOrderCommand))
             .whenComplete((result, ex) -> {

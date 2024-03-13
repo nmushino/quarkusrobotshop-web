@@ -27,7 +27,7 @@ public class ApiResource {
         DashboardUpdate dashboardUpdate = new DashboardUpdate(
                 UUID.randomUUID().toString(),
                 UUID.randomUUID().toString(),
-                "Jeremy",
+                "Noriaki",
                 Item.CROISSANT,
                 OrderStatus.IN_QUEUE,
                 null);
@@ -40,7 +40,7 @@ public class ApiResource {
 
         PlaceOrderCommand placeOrderCommand = new PlaceOrderCommand(
                 UUID.randomUUID().toString(),
-                "ATLANTA",
+                "TOKYO",
                 OrderSource.WEB,
                 null,
                 Collections.singletonList(new OrderLineItem(Item.CAPPUCCINO, BigDecimal.valueOf(2.99), "Goofy")),
