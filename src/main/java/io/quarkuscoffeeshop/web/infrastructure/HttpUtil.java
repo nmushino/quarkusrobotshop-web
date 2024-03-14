@@ -2,6 +2,9 @@ package io.quarkuscoffeeshop.web.infrastructure;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.quarkus.runtime.annotations.RegisterForReflection;
+import io.quarkus.runtime.annotations.StaticInitSafe;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,12 +21,16 @@ import java.util.concurrent.CompletableFuture;
 public class HttpUtil {
 
     static Logger logger = LoggerFactory.getLogger(HttpUtil.class);
+
+    // @ConfigProperty(name="streamUrl")
+    // static String streamUrl;
     
     static final ObjectMapper objectMapper = new ObjectMapper();
 
-    static void sendHttp() {
+    public static void sendHttp() {
         
         try {
+            //System.out.println("AAAAAAAAAAAAA  "+streamUrl);
             getHttp();
         } catch (IOException | InterruptedException ex) {
             logger.error(ex.getMessage());

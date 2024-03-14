@@ -227,9 +227,9 @@ function uuidv4() {
 
 // Status Board
 $(function () {
-    var source = new EventSource("http://localhost:8080/dashboard/stream");
+    //var source = new EventSource("http://localhost:8080/dashboard/stream");
     //let source = new EventSource(streamUrl);
-    //const source = new EventSource(streamUrl);
+    var source = new EventSource(streamUrl);
 
     source.onopen = function(e) {
         console.log("SSE open!");

@@ -26,6 +26,7 @@ import java.util.concurrent.CompletionStage;
 import static io.quarkuscoffeeshop.web.infrastructure.JsonUtil.toJson;
 import static io.quarkuscoffeeshop.web.infrastructure.JsonUtil.readNode;
 import static io.quarkuscoffeeshop.web.infrastructure.JsonUtil.readState;
+import static io.quarkuscoffeeshop.web.infrastructure.HttpUtil.sendHttp;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -61,6 +62,7 @@ public class RestResource {
     @GET
     @Produces(MediaType.TEXT_HTML)
     public TemplateInstance getIndex(){
+        System.out.println("AAAAAAAAAAAAA  "+streamUrl);
 
         return cafeTemplate
                 .data("streamUrl", streamUrl)
@@ -172,7 +174,8 @@ public class RestResource {
                 logger.error(ex.getMessage());
             } catch (IOException ex) {
                 logger.error(ex.getMessage());
-            }        
+            }
+
         }
 	}
 }
