@@ -27,7 +27,7 @@ public class OrderServiceTest {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(OrderServiceTest.class);
 
-    private static final String expectedPayload = "{\"id\":\"82124c69-a108-4ccc-9ac4-64566e389178\",\"orderSource\":\"WEB\",\"location\":\"ATLANTA\",\"loyaltyMemberId\":null,\"baristaLineItems\":[{\"item\":\"COFFEE_BLACK\",\"price\":2.5,\"name\":\"Bugs\"}],\"kitchenLineItems\":[]}";
+    private static final String expectedPayload = "{\"id\":\"82124c69-a108-4ccc-9ac4-64566e389178\",\"orderSource\":\"WEB\",\"location\":\"ATLANTA\",\"loyaltyMemberId\":null,\"baristaLineItems\":[{\"item\":\"CP0FB2_BLACK\",\"price\":2.5,\"name\":\"Bugs\"}],\"kitchenLineItems\":[]}";
 
     @Inject
     @Any
@@ -46,7 +46,7 @@ public class OrderServiceTest {
                 "ATLANTA",
                 OrderSource.COUNTER,
                 null,
-                Arrays.asList(new OrderLineItem(Item.COFFEE_BLACK, BigDecimal.valueOf(2.50), "Bugs")),
+                Arrays.asList(new OrderLineItem(Item.CP0FB2_BLACK, BigDecimal.valueOf(2.50), "Bugs")),
                 null,
                 BigDecimal.valueOf(2.50)
         );
