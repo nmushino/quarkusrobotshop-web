@@ -1,7 +1,7 @@
-package io.quarkuscoffeeshop.web.infrastructure;
+package io.quarkusrobotshop.web.infrastructure;
 
 import io.quarkus.test.Mock;
-import io.quarkuscoffeeshop.web.domain.commands.PlaceOrderCommand;
+import io.quarkusrobotshop.web.domain.commands.PlaceOrderCommand;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

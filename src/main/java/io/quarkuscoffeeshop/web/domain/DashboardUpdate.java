@@ -1,8 +1,8 @@
-package io.quarkuscoffeeshop.web.domain;
+package io.quarkusrobotshop.web.domain;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.quarkuscoffeeshop.domain.*;
+import io.quarkusrobotshop.domain.*;
 import io.quarkus.runtime.annotations.RegisterForReflection;
 
 import java.util.Optional;

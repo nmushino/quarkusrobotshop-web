@@ -1,11 +1,11 @@
-DROP SCHEMA IF EXISTS coffeeshop CASCADE ;
-CREATE SCHEMA coffeeshop AUTHORIZATION coffeeshopuser;
-alter table if exists coffeeshop.LineItems
+DROP SCHEMA IF EXISTS robotshop CASCADE ;
+CREATE SCHEMA robotshop AUTHORIZATION robotshopuser;
+alter table if exists robotshop.LineItems
     drop constraint if exists FK6fhxopytha3nnbpbfmpiv4xgn;
-drop table if exists coffeeshop.LineItems cascade;
-drop table if exists coffeeshop.Orders cascade;
-drop table if exists coffeeshop.OutboxEvent cascade;
-create table coffeeshop.LineItems (
+drop table if exists robotshop.LineItems cascade;
+drop table if exists robotshop.Orders cascade;
+drop table if exists robotshop.OutboxEvent cascade;
+create table robotshop.LineItems (
                            itemId varchar(255) not null,
                            item varchar(255),
                            lineItemStatus varchar(255),
@@ -14,7 +14,7 @@ create table coffeeshop.LineItems (
                            order_id varchar(255) not null,
                            primary key (itemId)
 );
-create table coffeeshop.Orders (
+create table robotshop.Orders (
                         order_id varchar(255) not null,
                         loyaltyMemberId varchar(255),
                         location     varchar(255),
@@ -23,7 +23,7 @@ create table coffeeshop.Orders (
                         timestamp timestamp,
                         primary key (order_id)
 );
-create table coffeeshop.OutboxEvent (
+create table robotshop.OutboxEvent (
                              id uuid not null,
                              aggregatetype varchar(255) not null,
                              aggregateid varchar(255) not null,
@@ -32,7 +32,7 @@ create table coffeeshop.OutboxEvent (
                              payload varchar(8000),
                              primary key (id)
 );
-alter table if exists coffeeshop.LineItems
+alter table if exists robotshop.LineItems
     add constraint FK6fhxopytha3nnbpbfmpiv4xgn
         foreign key (order_id)
-            references coffeeshop.Orders;
+            references robotshop.Orders;

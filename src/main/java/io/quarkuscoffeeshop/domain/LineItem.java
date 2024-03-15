@@ -1,4 +1,4 @@
-package io.quarkuscoffeeshop.domain;
+package io.quarkusrobotshop.domain;
 
 import io.quarkus.runtime.annotations.RegisterForReflection;
 import org.apache.commons.lang3.builder.EqualsBuilder;

@@ -1,6 +1,6 @@
-package io.quarkuscoffeeshop.web.infrastructure;
+package io.quarkusrobotshop.web.infrastructure;
 
-import io.quarkuscoffeeshop.web.domain.DashboardUpdate;
+import io.quarkusrobotshop.web.domain.DashboardUpdate;
 import io.quarkus.runtime.annotations.RegisterForReflection;
 import io.smallrye.reactive.messaging.annotations.Broadcast;
 import org.eclipse.microprofile.reactive.messaging.Channel;

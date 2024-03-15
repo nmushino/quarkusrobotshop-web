@@ -1,6 +1,6 @@
-package io.quarkuscoffeeshop.web.domain;
+package io.quarkusrobotshop.web.domain;
 
-import io.quarkuscoffeeshop.domain.Item;
+import io.quarkusrobotshop.domain.Item;
 
 import java.math.BigDecimal;
 import java.util.Objects;

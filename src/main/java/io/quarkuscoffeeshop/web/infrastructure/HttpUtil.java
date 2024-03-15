@@ -1,4 +1,4 @@
-package io.quarkuscoffeeshop.web.infrastructure;
+package io.quarkusrobotshop.web.infrastructure;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.quarkus.runtime.annotations.RegisterForReflection;

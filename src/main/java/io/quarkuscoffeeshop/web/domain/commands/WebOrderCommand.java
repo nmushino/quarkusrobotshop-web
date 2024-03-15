@@ -1,6 +1,6 @@
-package io.quarkuscoffeeshop.web.domain.commands;
+package io.quarkusrobotshop.web.domain.commands;
 
-import io.quarkuscoffeeshop.domain.OrderLineItem;
+import io.quarkusrobotshop.domain.OrderLineItem;
 
 import java.util.ArrayList;
 import java.util.List;

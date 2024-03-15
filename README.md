@@ -1,5 +1,5 @@
 # Docs
-Please see the Github Pages Site for complete documentation: [quarkuscoffeeshop.github.io](https://quarkuscoffeeshop.github.io)
+Please see the Github Pages Site for complete documentation: [quarkusrobotshop.github.io](https://quarkusrobotshop.github.io)
 
 # Quarkus
 
@@ -13,13 +13,13 @@ Orders can be placed through the web UI or a REST endpoint "/order"
 
 ## Local Development
 
-You will need to start the supporting services, Kafka and PostgreSQL, from the [quarkuscoffeeshop-support](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-support.git) project:
+You will need to start the supporting services, Kafka and PostgreSQL, from the [quarkusrobotshop-support](https://github.com/quarkusrobotshop/quarkusrobotshop-support.git) project:
 
 ```shell
-git clone https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-support.git
+git clone https://github.com/quarkusrobotshop/quarkusrobotshop-support.git
 ```
 
-The services can be started with Docker compose from within the quarkuscoffeeshop-support directory:
+The services can be started with Docker compose from within the quarkusrobotshop-support directory:
 
 ```shell
 docker compose up
@@ -80,11 +80,11 @@ Quarkus applications contain all the files needed to containerize the applicatio
 
 ```shell
 ./mvnw clean package -Pnative -Dquarkus.native.container-build=true
-docker build -f src/main/docker/Dockerfile.native -t <<DOCKER_HUB_ID>>/quarkuscoffeeshop-web .
+docker build -f src/main/docker/Dockerfile.native -t <<DOCKER_HUB_ID>>/quarkusrobotshop-web .
 export KAFKA_BOOTSTRAP_URLS=localhost:9092 STREAM_URL=http://localhost:8080/dashboard/stream CORS_ORIGINS=http://localhost:8080
-docker run -i --network="host" -e KAFKA_BOOTSTRAP_URLS=${KAFKA_BOOTSTRAP_URLS} -e STREAM_URL=${STREAM_URL} -e CORS_ORIGINS=${CORS_ORIGINS} <<DOCKER_HUB_ID>>/quarkuscoffeeshop-counter:latest
+docker run -i --network="host" -e KAFKA_BOOTSTRAP_URLS=${KAFKA_BOOTSTRAP_URLS} -e STREAM_URL=${STREAM_URL} -e CORS_ORIGINS=${CORS_ORIGINS} <<DOCKER_HUB_ID>>/quarkusrobotshop-counter:latest
 docker images -a | grep web
-docker tag <<RESULT>> <<DOCKER_HUB_ID>>/quarkuscoffeeshop-web:<<VERSION>>
+docker tag <<RESULT>> <<DOCKER_HUB_ID>>/quarkusrobotshop-web:<<VERSION>>
 ```
 
 ### Containerizing the application in Native Mode (OPTIONAL)
@@ -94,8 +94,8 @@ Quarkus can also compile your Java application into a native binary (you don't h
  ```shell
 export KAFKA_BOOTSTRAP_URLS=localhost:9092 STREAM_URL=http://localhost:8080/dashboard/stream CORS_ORIGINS=http://localhost:8080
 ./mvnw clean package -Pnative -Dquarkus.native.container-build=true
-docker build -f src/main/docker/Dockerfile.native -t <<DOCKER_HUB_ID>>/quarkuscoffeeshop-web .
-docker run -i --network="host" -e STREAM_URL=${STREAM_URL} -e CORS_ORIGINS=${CORS_ORIGINS} -e KAFKA_BOOTSTRAP_URLS=${KAFKA_BOOTSTRAP_URLS} <<DOCKER_ID>>/quarkuscoffeeshop-web:latest
+docker build -f src/main/docker/Dockerfile.native -t <<DOCKER_HUB_ID>>/quarkusrobotshop-web .
+docker run -i --network="host" -e STREAM_URL=${STREAM_URL} -e CORS_ORIGINS=${CORS_ORIGINS} -e KAFKA_BOOTSTRAP_URLS=${KAFKA_BOOTSTRAP_URLS} <<DOCKER_ID>>/quarkusrobotshop-web:latest
 docker images -a | grep web
 docker tag <<RESULT>> <<DOCKER_HUB_ID>>/quarkus-cafe-web:<<VERSION>>
 ```

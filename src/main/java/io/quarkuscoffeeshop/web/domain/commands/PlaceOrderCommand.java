@@ -1,9 +1,9 @@
-package io.quarkuscoffeeshop.web.domain.commands;
+package io.quarkusrobotshop.web.domain.commands;
 
 import io.quarkus.runtime.annotations.RegisterForReflection;
-import io.quarkuscoffeeshop.domain.CommandType;
-import io.quarkuscoffeeshop.domain.OrderLineItem;
-import io.quarkuscoffeeshop.domain.OrderSource;
+import io.quarkusrobotshop.domain.CommandType;
+import io.quarkusrobotshop.domain.OrderLineItem;
+import io.quarkusrobotshop.domain.OrderSource;
 
 import java.math.BigDecimal;
 import java.util.List;

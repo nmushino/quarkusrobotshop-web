@@ -1,9 +1,9 @@
-package io.quarkuscoffeeshop.web.infrastructure;
+package io.quarkusrobotshop.web.infrastructure;
 
 import io.quarkus.qute.Template;
 import io.quarkus.qute.TemplateInstance;
 import io.quarkus.runtime.annotations.RegisterForReflection;
-import io.quarkuscoffeeshop.web.domain.commands.PlaceOrderCommand;
+import io.quarkusrobotshop.web.domain.commands.PlaceOrderCommand;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,10 +23,10 @@ import javax.ws.rs.sse.SseBroadcaster;
 
 import java.util.Random;
 import java.util.concurrent.CompletionStage;
-import static io.quarkuscoffeeshop.web.infrastructure.JsonUtil.toJson;
-import static io.quarkuscoffeeshop.web.infrastructure.JsonUtil.readNode;
-import static io.quarkuscoffeeshop.web.infrastructure.JsonUtil.readState;
-import static io.quarkuscoffeeshop.web.infrastructure.HttpUtil.sendHttp;
+import static io.quarkusrobotshop.web.infrastructure.JsonUtil.toJson;
+import static io.quarkusrobotshop.web.infrastructure.JsonUtil.readNode;
+import static io.quarkusrobotshop.web.infrastructure.JsonUtil.readState;
+import static io.quarkusrobotshop.web.infrastructure.HttpUtil.sendHttp;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;

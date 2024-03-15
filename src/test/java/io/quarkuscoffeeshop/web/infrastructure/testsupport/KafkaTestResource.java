@@ -1,4 +1,4 @@
-package io.quarkuscoffeeshop.web.infrastructure.testsupport;
+package io.quarkusrobotshop.web.infrastructure.testsupport;
 
 import io.quarkus.test.common.QuarkusTestResourceLifecycleManager;
 

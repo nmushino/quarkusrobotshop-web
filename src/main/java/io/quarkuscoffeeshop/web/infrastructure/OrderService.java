@@ -1,9 +1,9 @@
-package io.quarkuscoffeeshop.web.infrastructure;
+package io.quarkusrobotshop.web.infrastructure;
 
 
 import io.quarkus.runtime.annotations.RegisterForReflection;
-import io.quarkuscoffeeshop.web.domain.commands.PlaceOrderCommand;
-import io.quarkuscoffeeshop.web.domain.commands.WebOrderCommand;
+import io.quarkusrobotshop.web.domain.commands.PlaceOrderCommand;
+import io.quarkusrobotshop.web.domain.commands.WebOrderCommand;
 import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
 import org.slf4j.Logger;
@@ -14,8 +14,8 @@ import javax.inject.Inject;
 
 import java.util.concurrent.CompletableFuture;
 
-import static io.quarkuscoffeeshop.web.infrastructure.JsonUtil.toJson;
-import static io.quarkuscoffeeshop.web.infrastructure.HttpUtil.sendHttp;
+import static io.quarkusrobotshop.web.infrastructure.JsonUtil.toJson;
+import static io.quarkusrobotshop.web.infrastructure.HttpUtil.sendHttp;
 
 @RegisterForReflection
 @ApplicationScoped

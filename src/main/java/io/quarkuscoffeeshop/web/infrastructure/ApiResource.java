@@ -1,9 +1,9 @@
-package io.quarkuscoffeeshop.web.infrastructure;
+package io.quarkusrobotshop.web.infrastructure;
 
-import io.quarkuscoffeeshop.domain.*;
-import io.quarkuscoffeeshop.web.domain.DashboardUpdate;
+import io.quarkusrobotshop.domain.*;
+import io.quarkusrobotshop.web.domain.DashboardUpdate;
 import io.quarkus.runtime.annotations.RegisterForReflection;
-import io.quarkuscoffeeshop.web.domain.commands.PlaceOrderCommand;
+import io.quarkusrobotshop.web.domain.commands.PlaceOrderCommand;
 import org.jboss.logging.Logger;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

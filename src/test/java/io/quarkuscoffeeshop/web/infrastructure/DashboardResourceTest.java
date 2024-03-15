@@ -1,11 +1,11 @@
-package io.quarkuscoffeeshop.web.infrastructure;
+package io.quarkusrobotshop.web.infrastructure;
 
 import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
-import io.quarkuscoffeeshop.domain.Item;
-import io.quarkuscoffeeshop.domain.OrderStatus;
-import io.quarkuscoffeeshop.web.domain.DashboardUpdate;
-import io.quarkuscoffeeshop.web.infrastructure.testsupport.KafkaTestResource;
+import io.quarkusrobotshop.domain.Item;
+import io.quarkusrobotshop.domain.OrderStatus;
+import io.quarkusrobotshop.web.domain.DashboardUpdate;
+import io.quarkusrobotshop.web.infrastructure.testsupport.KafkaTestResource;
 import io.smallrye.reactive.messaging.connectors.InMemoryConnector;
 import io.smallrye.reactive.messaging.connectors.InMemorySource;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package io.quarkuscoffeeshop.domain.valueobjects;
+package io.quarkusrobotshop.domain.valueobjects;
 
 import java.util.Objects;
 import java.util.StringJoiner;

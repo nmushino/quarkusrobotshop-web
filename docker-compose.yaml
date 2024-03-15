@@ -2,14 +2,14 @@ version: '3'
 
 services:
 
-  coffeeshop-db:
+  robotshop-db:
     image: postgres:11
     ports:
       - 5432:5432
     environment:
-      - POSTGRES_USER=coffeeshopuser
+      - POSTGRES_USER=robotshopuser
       - POSTGRES_PASSWORD=redhat-20
-      - POSTGRES_DB=coffeeshopdb
+      - POSTGRES_DB=robotshopdb
     volumes:
       - ./init-postgresql.sql:/docker-entrypoint-initdb.d/init-postgresql.sql
     networks:
@@ -32,7 +32,7 @@ services:
 #    image:  'mongo'
 #    container_name:  'quarkus-mongodb-container'
 #    environment:
-#      - MONGO_INITDB_DATABASE=coffeeshopdb
+#      - MONGO_INITDB_DATABASE=robotshopdb
 #      - MONGO_INITDB_ROOT_USERNAME=admin
 #      - MONGO_INITDB_ROOT_PASSWORD=redhat-20
 #    volumes:
@@ -105,4 +105,4 @@ services:
 
 networks:
   my-network:
-    name: coffeeshop-network
+    name: robotshop-network
