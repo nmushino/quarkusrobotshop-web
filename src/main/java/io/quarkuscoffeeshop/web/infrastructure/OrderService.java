@@ -36,7 +36,7 @@ public class OrderService {
         logger.debug("WebOrderCommand: {}", webOrderCommand);
 
         // Bug 回避
-        sendHttp();
+        //sendHttp();
 
         return ordersOutEmitter.send(toJson(webOrderCommand))
             .whenComplete((result, ex) -> {

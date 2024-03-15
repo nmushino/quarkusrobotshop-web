@@ -27,21 +27,20 @@ public class HttpUtil {
     
     static final ObjectMapper objectMapper = new ObjectMapper();
 
-    public static void sendHttp() {
+    public static void sendHttp(String streamUrl) {
         
         try {
-            //System.out.println("AAAAAAAAAAAAA  "+streamUrl);
-            getHttp();
+            getHttp(streamUrl);
         } catch (IOException | InterruptedException ex) {
             logger.error(ex.getMessage());
         }
     }
 
-    public static void getHttp() throws IOException, InterruptedException {
+    public static void getHttp(String streamUrl) throws IOException, InterruptedException {
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest
-        .newBuilder(URI.create("http://localhost:8080/dashboard/stream"))
+        .newBuilder(URI.create(streamUrl))
         .header("User-Agent", "Java HttpClient")
         .build();
 

@@ -62,7 +62,6 @@ public class RestResource {
     @GET
     @Produces(MediaType.TEXT_HTML)
     public TemplateInstance getIndex(){
-        System.out.println("AAAAAAAAAAAAA  "+streamUrl);
 
         return cafeTemplate
                 .data("streamUrl", streamUrl)
@@ -99,6 +98,8 @@ public class RestResource {
         this.sse = sse;
         this.broadcaster = sse.newBroadcaster();
         placeordercommander = placeOrderCommand;
+
+        sendHttp(streamUrl);
         
         return orderService.placeOrder(placeOrderCommand)
             .thenApply(res -> Response.accepted().entity(placeOrderCommand).build()).exceptionally(ex -> {
