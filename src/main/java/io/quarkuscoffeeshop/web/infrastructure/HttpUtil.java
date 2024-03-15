@@ -21,9 +21,6 @@ import java.util.concurrent.CompletableFuture;
 public class HttpUtil {
 
     static Logger logger = LoggerFactory.getLogger(HttpUtil.class);
-
-    // @ConfigProperty(name="streamUrl")
-    // static String streamUrl;
     
     static final ObjectMapper objectMapper = new ObjectMapper();
 

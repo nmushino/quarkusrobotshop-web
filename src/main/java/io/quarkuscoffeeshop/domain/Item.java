@@ -6,8 +6,8 @@ import io.quarkus.runtime.annotations.RegisterForReflection;
 public enum Item {
 
     //Beverages
-    CAPPUCCINO, CP0FB2_BLACK, COFFEE_WITH_ROOM, ESPRESSO, ESPRESSO_DOUBLE, LATTE,
+    CH99A9, CP0FB2_BLACK, CP1FC3_HOME, CK9FA3, CS92C3, CHD89SS9,
 
     //Food
-    CAKEPOP, CROISSANT, MUFFIN, CROISSANT_CHOCOLATE
+    FAMKD8D8, FAC94S3, FASKK9K, FAND78K
 }

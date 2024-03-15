@@ -345,40 +345,40 @@ function displayFriendlyItem(item){
         // beverages
         case "CP0FB2_BLACK":
             console.log("Black CP0FB2");
-            result = "Black CP0FB2"
+            result = "BLACK HOMEROBOT CP0FB2"
             break;
-        case "COFFEE_WITH_ROOM":
-            console.log("Coffee with room");
-            result = "Cofee with room";
+        case "CP1FC3_HOME":
+            console.log("CP1FC3 HOME");
+            result = "CP1FC3 HOMEROBOT HOME";
             break;
-        case "CAPPUCCINO":
-            console.log("Capuccino");
-            result = "Capuccino";
+        case "CH99A9":
+            console.log("CH99A9");
+            result = "CH99A9 HOMEROBOT ";
             break;
-        case "ESPRESSO":
-            console.log("Espresso");
-            result = "Espresso";
+        case "CK9FA3":
+            console.log("CK9FA3");
+            result = "CK9FA3 HOMEROBOT ";
             break;
-        case "ESPRESSO_DOUBLE":
-            console.log("Double Espresso");
-            result = "Double Espresso";
+        case "CS92C3":
+            console.log("CS92C3");
+            result = "CS92C3 HOMEROBOT ";
             break;
         // kitchen
-        case "CAKEPOP":
-            console.log("Cakepop");
-            result = "Cakepop";
+        case "FAMKD8D8":
+            console.log("FAMKD8D8");
+            result = "FAMKD8D8 PROROBOT";
             break;
-        case "CROISSANT":
-            console.log("Butter Croissant");
-            result = "Butter Croissant";
+        case "FAC94S3":
+            console.log("FAC94S3");
+            result = "FAC94S3 PROROBOT";
             break;
-        case "CROISSANT_CHOCOLATE":
-            console.log("Chocolate Croissant");
-            result = "Chocoloate Croissant";
+        case "FAND78K":
+            console.log("FAND78K");
+            result = "FAND78K PROROBOT";
             break;
-        case "MUFFIN":
-            console.log("Blueberry Muffin");
-            result = "Blueberry Muffin";
+        case "FASKK9K":
+            console.log("FASKK9K");
+            result = "FASKK9K PROROBOT";
             break;
         // default to the returned value
         default:

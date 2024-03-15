@@ -28,7 +28,7 @@ public class ApiResource {
                 UUID.randomUUID().toString(),
                 UUID.randomUUID().toString(),
                 "Noriaki",
-                Item.CROISSANT,
+                Item.FAC94S3,
                 OrderStatus.IN_QUEUE,
                 null);
         return Response.ok().entity(dashboardUpdate).build();
@@ -43,8 +43,8 @@ public class ApiResource {
                 "TOKYO",
                 OrderSource.WEB,
                 null,
-                Collections.singletonList(new OrderLineItem(Item.CAPPUCCINO, BigDecimal.valueOf(2.99), "Goofy")),
-                Collections.singletonList(new OrderLineItem(Item.CROISSANT, BigDecimal.valueOf(2.99), "Goofy")),
+                Collections.singletonList(new OrderLineItem(Item.CH99A9, BigDecimal.valueOf(755000), "Goofy")),
+                Collections.singletonList(new OrderLineItem(Item.FAC94S3, BigDecimal.valueOf(2.99), "Goofy")),
                 BigDecimal.valueOf(5.98)
         );
 

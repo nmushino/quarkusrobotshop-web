@@ -32,7 +32,7 @@ public class DashboardResourceTest {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DashboardResourceTest.class);
 
-    private static final String expectedPayload = "data: {\"orderId\":\"82124c69-a108-4ccc-9ac4-64566e389178\",\"itemId\":\"f84cb5e2-a3fd-43af-8df8-b5d74b133115\",\"name\":\"Scotty\",\"item\":\"COFFEE_WITH_ROOM\",\"status\":\"IN_QUEUE\",\"madeBy\":\"\"}";
+    private static final String expectedPayload = "data: {\"orderId\":\"82124c69-a108-4ccc-9ac4-64566e389178\",\"itemId\":\"f84cb5e2-a3fd-43af-8df8-b5d74b133115\",\"name\":\"Scotty\",\"item\":\"CP1FC3_HOME\",\"status\":\"IN_QUEUE\",\"madeBy\":\"\"}";
 
     @Inject
     @Any
@@ -45,7 +45,7 @@ public class DashboardResourceTest {
                 "82124c69-a108-4ccc-9ac4-64566e389178",
                 "f84cb5e2-a3fd-43af-8df8-b5d74b133115",
                 "Scotty",
-                Item.COFFEE_WITH_ROOM,
+                Item.CP1FC3_HOME,
                 OrderStatus.IN_QUEUE,
                 null
         );
