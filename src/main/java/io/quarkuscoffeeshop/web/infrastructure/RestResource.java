@@ -131,7 +131,7 @@ public class RestResource {
                 String[] homerobot = readNode(homerobotitem);
 
                 Random rand = new Random();
-                int num = rand.nextInt(20);
+                int num = rand.nextInt(100);
                 
                 infoHomerobot.name = homerobot[2];
                 infoHomerobot.item = homerobot[0];
@@ -142,7 +142,7 @@ public class RestResource {
                 String[] prorobot = readNode(prorobotitem);
 
                 Random rand = new Random();
-                int num = rand.nextInt(40);
+                int num = rand.nextInt(1000);
                 
                 infoProrobot.name = prorobot[2];
                 infoProrobot.item = prorobot[0];
