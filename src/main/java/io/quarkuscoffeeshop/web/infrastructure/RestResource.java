@@ -113,12 +113,12 @@ public class RestResource {
         
         if (placeordercommander != null) {
 
-            String baristaitem = placeordercommander.getBaristaItems().toString();
-            String kitchenitem = placeordercommander.getKitchenItems().toString();
+            String homerobotitem = placeordercommander.getHomerobotItems().toString();
+            String prorobotitem = placeordercommander.getProrobotItems().toString();
             String state = placeordercommander.toString();
 
-            jsonListItem infoBarista = new jsonListItem();
-            jsonListItem infoKitchen = new jsonListItem();
+            jsonListItem infoHomerobot = new jsonListItem();
+            jsonListItem infoProrobot = new jsonListItem();
             jsonListItem info = new jsonListItem();
 
             try {
@@ -127,33 +127,33 @@ public class RestResource {
             String states = readState(state);
             OutboundSseEvent event = null;
 
-            if ( !baristaitem.equals("Optional[[]]")) {
-                String[] barista = readNode(baristaitem);
+            if ( !homerobotitem.equals("Optional[[]]")) {
+                String[] homerobot = readNode(homerobotitem);
 
                 Random rand = new Random();
                 int num = rand.nextInt(20);
                 
-                infoBarista.name = barista[2];
-                infoBarista.item = barista[0];
-                infoBarista.status = states;
-                infoBarista.madeBy = num;
+                infoHomerobot.name = homerobot[2];
+                infoHomerobot.item = homerobot[0];
+                infoHomerobot.status = states;
+                infoHomerobot.madeBy = num;
             }
-            if ( !kitchenitem.equals("Optional[[]]")) {
-                String[] kitchen = readNode(kitchenitem);
+            if ( !prorobotitem.equals("Optional[[]]")) {
+                String[] prorobot = readNode(prorobotitem);
 
                 Random rand = new Random();
                 int num = rand.nextInt(40);
                 
-                infoKitchen.name = kitchen[2];
-                infoKitchen.item = kitchen[0];
-                infoKitchen.status = states;
-                infoKitchen.madeBy = num;
+                infoProrobot.name = prorobot[2];
+                infoProrobot.item = prorobot[0];
+                infoProrobot.status = states;
+                infoProrobot.madeBy = num;
             }
             
-            if (!baristaitem.equals("Optional[[]]")) {
-                info = infoBarista;
-            } else if (!kitchenitem.equals("Optional[[]]")) {
-                info = infoKitchen;
+            if (!homerobotitem.equals("Optional[[]]")) {
+                info = infoHomerobot;
+            } else if (!prorobotitem.equals("Optional[[]]")) {
+                info = infoProrobot;
             }
 
             // 断定のイベント送信

@@ -32,7 +32,7 @@ public class RestResourceTest {
         QuarkusMock.installMockForType(mock, OrderService.class);
     }
 
-    String jsonPayload = "{\"commandType\":\"PLACE_ORDER\",\"baristaItems\":[{\"item\":\"CH99A9\",\"price\":2.99,\"name\":\"Goofy\"}],\"kitchenItems\":[{\"item\":\"FAC94S3\",\"price\":2.99,\"name\":\"Goofy\"}],\"id\":\"b2c56eb2-fd7e-4a46-b1f9-85df85ad0068\",\"storeId\":\"ATLANTA\",\"orderSource\":\"WEB\",\"rewardsId\":null,\"total\":5.98}";
+    String jsonPayload = "{\"commandType\":\"PLACE_ORDER\",\"homerobotItems\":[{\"item\":\"CH99A9\",\"price\":2.99,\"name\":\"Goofy\"}],\"prorobotItems\":[{\"item\":\"FAC94S3\",\"price\":2.99,\"name\":\"Goofy\"}],\"id\":\"b2c56eb2-fd7e-4a46-b1f9-85df85ad0068\",\"storeId\":\"ATLANTA\",\"orderSource\":\"WEB\",\"rewardsId\":null,\"total\":5.98}";
 
     @Test
     public void testOrderIn() {

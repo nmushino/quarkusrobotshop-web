@@ -15,8 +15,8 @@ import java.util.StringJoiner;
 public class PlaceOrderCommand {
 
     private final CommandType commandType = CommandType.PLACE_ORDER;
-    List<OrderLineItem> baristaItems;
-    List<OrderLineItem> kitchenItems;
+    List<OrderLineItem> homerobotItems;
+    List<OrderLineItem> prorobotItems;
     private String id;
     private String storeId;
     private OrderSource orderSource;
@@ -26,13 +26,13 @@ public class PlaceOrderCommand {
     public PlaceOrderCommand() {
     }
 
-    public PlaceOrderCommand(String id, String storeId, OrderSource orderSource, String rewardsId, List<OrderLineItem> baristaItems, List<OrderLineItem> kitchenItems, BigDecimal total) {
+    public PlaceOrderCommand(String id, String storeId, OrderSource orderSource, String rewardsId, List<OrderLineItem> homerobotItems, List<OrderLineItem> prorobotItems, BigDecimal total) {
         this.id = id;
         this.orderSource = orderSource;
         this.storeId = storeId;
         this.rewardsId = rewardsId;
-        this.baristaItems = baristaItems;
-        this.kitchenItems = kitchenItems;
+        this.homerobotItems = homerobotItems;
+        this.prorobotItems = prorobotItems;
         this.total = total;
     }
 
@@ -40,20 +40,20 @@ public class PlaceOrderCommand {
         return Optional.ofNullable(rewardsId);
     }
 
-    public Optional<List<OrderLineItem>> getBaristaItems() {
-        return Optional.ofNullable(baristaItems);
+    public Optional<List<OrderLineItem>> getHomerobotItems() {
+        return Optional.ofNullable(homerobotItems);
     }
 
-    public Optional<List<OrderLineItem>> getKitchenItems() {
-        return Optional.ofNullable(kitchenItems);
+    public Optional<List<OrderLineItem>> getProrobotItems() {
+        return Optional.ofNullable(prorobotItems);
     }
 
     @Override
     public String toString() {
         return new StringJoiner(", ", PlaceOrderCommand.class.getSimpleName() + "[", "]")
                 .add("commandType=" + commandType)
-                .add("baristaItems=" + baristaItems)
-                .add("kitchenItems=" + kitchenItems)
+                .add("homerobotItems=" + homerobotItems)
+                .add("prorobotItems=" + prorobotItems)
                 .add("id='" + id + "'")
                 .add("storeId='" + storeId + "'")
                 .add("orderSource=" + orderSource)
@@ -68,8 +68,8 @@ public class PlaceOrderCommand {
         if (o == null || getClass() != o.getClass()) return false;
         PlaceOrderCommand that = (PlaceOrderCommand) o;
         return commandType == that.commandType &&
-                Objects.equals(baristaItems, that.baristaItems) &&
-                Objects.equals(kitchenItems, that.kitchenItems) &&
+                Objects.equals(homerobotItems, that.homerobotItems) &&
+                Objects.equals(prorobotItems, that.prorobotItems) &&
                 Objects.equals(id, that.id) &&
                 Objects.equals(storeId, that.storeId) &&
                 orderSource == that.orderSource &&
@@ -79,7 +79,7 @@ public class PlaceOrderCommand {
 
     @Override
     public int hashCode() {
-        return Objects.hash(commandType, baristaItems, kitchenItems, id, storeId, orderSource, rewardsId, total);
+        return Objects.hash(commandType, homerobotItems, prorobotItems, id, storeId, orderSource, rewardsId, total);
     }
 
     public CommandType getCommandType() {
@@ -102,12 +102,12 @@ public class PlaceOrderCommand {
         return total;
     }
 
-    public void setBaristaItems(List<OrderLineItem> baristaItems) {
-        this.baristaItems = baristaItems;
+    public void setHomerobotItems(List<OrderLineItem> homerobotItems) {
+        this.homerobotItems = homerobotItems;
     }
 
-    public void setKitchenItems(List<OrderLineItem> kitchenItems) {
-        this.kitchenItems = kitchenItems;
+    public void setProrobotItems(List<OrderLineItem> prorobotItems) {
+        this.prorobotItems = prorobotItems;
     }
 
     public void setStoreId(String storeId) {

@@ -38,7 +38,7 @@ public class JsonUtil {
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
         JsonNode root = mapper.readTree(toJson(json));
         String str = root.toString();
-        String arrayBaristaItems[] = new String[3];
+        String arrayHomerobotItems[] = new String[3];
 
         // Jsonデータ から文字列抽出
         String itemStr = "item=";
@@ -47,7 +47,7 @@ public class JsonUtil {
         int itemEndIndex = str.indexOf(itemEndStr) + itemEndStr.length();
         String itemStrSubstring = str.substring(itemBeginIndex, itemEndIndex);
         String itemResult = itemStrSubstring.replace(itemStr, "").replace(itemEndStr, "");
-        arrayBaristaItems[0] = itemResult;
+        arrayHomerobotItems[0] = itemResult;
         
         String priceStr = str.substring(itemEndIndex, str.length());
         String priceBeginStr = "price=";
@@ -56,7 +56,7 @@ public class JsonUtil {
         int priceEndIndex = priceStr.indexOf(priceEndStr) + priceEndStr.length();
         String priceStrSubstring = priceStr.substring(priceBeginIndex, priceEndIndex);
         String priceResult = priceStrSubstring.replace(priceBeginStr, "").replace(priceEndStr, "");
-        arrayBaristaItems[1] = priceResult;
+        arrayHomerobotItems[1] = priceResult;
 
         String nameStr = str.substring(priceEndIndex, str.length());
         String nameBeginStr = "name=";
@@ -68,9 +68,9 @@ public class JsonUtil {
         if (nameResult == null) {
             nameResult = "";
         }
-        arrayBaristaItems[2] = nameResult;
+        arrayHomerobotItems[2] = nameResult;
 
-        return arrayBaristaItems;
+        return arrayHomerobotItems;
     }
    
     public static String readState(String json) throws IOException {

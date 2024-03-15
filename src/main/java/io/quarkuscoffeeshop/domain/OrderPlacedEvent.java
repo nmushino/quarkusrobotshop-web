@@ -16,9 +16,9 @@ public class OrderPlacedEvent {
 
     public String rewardsId;
 
-    public List<LineItem> beverages = new ArrayList<>();
+    public List<LineItem> homerobots = new ArrayList<>();
 
-    public List<LineItem> kitchenOrders = new ArrayList<>();
+    public List<LineItem> prorobotOrders = new ArrayList<>();
 
     public final EventType eventType = EventType.ORDER_PLACED;
 
@@ -26,29 +26,29 @@ public class OrderPlacedEvent {
     }
 
     public List<LineItem> getBeverages() {
-        return beverages == null ? new ArrayList<>() : beverages;
+        return homerobots == null ? new ArrayList<>() : homerobots;
     }
 
-    public List<LineItem> getKitchenOrders() {
-        return kitchenOrders == null ? new ArrayList<>() : kitchenOrders;
+    public List<LineItem> getProrobotOrders() {
+        return prorobotOrders == null ? new ArrayList<>() : prorobotOrders;
     }
 
-    public void addBeverages(final String id, final List<LineItem> beverageList) {
+    public void addBeverages(final String id, final List<LineItem> homerobotList) {
         this.id = id;
-        this.beverages.addAll(beverageList);
+        this.homerobots.addAll(homerobotList);
     }
 
-    public void addKitchenItems(final String id, final List<LineItem> kitchenOrdersList) {
+    public void addProrobotItems(final String id, final List<LineItem> prorobotOrdersList) {
         this.id = id;
-        this.kitchenOrders.addAll(kitchenOrdersList);
+        this.prorobotOrders.addAll(prorobotOrdersList);
     }
 
-    public OrderPlacedEvent(String id, OrderSource orderSource, String rewardsId, List<LineItem> beverages, List<LineItem> kitchenOrders) {
+    public OrderPlacedEvent(String id, OrderSource orderSource, String rewardsId, List<LineItem> homerobots, List<LineItem> prorobotOrders) {
         this.id = id;
         this.orderSource = orderSource;
         this.rewardsId = rewardsId;
-        this.beverages = beverages;
-        this.kitchenOrders = kitchenOrders;
+        this.homerobots = homerobots;
+        this.prorobotOrders = prorobotOrders;
     }
 
     @Override
@@ -57,8 +57,8 @@ public class OrderPlacedEvent {
                 .add("id='" + id + "'")
                 .add("orderSource=" + orderSource)
                 .add("rewardsId=" + rewardsId)
-                .add("beverages=" + beverages)
-                .add("kitchenOrders=" + kitchenOrders)
+                .add("homerobots=" + homerobots)
+                .add("prorobotOrders=" + prorobotOrders)
                 .add("eventType=" + eventType)
                 .toString();
     }
@@ -71,14 +71,14 @@ public class OrderPlacedEvent {
         return Objects.equals(id, that.id) &&
                 orderSource == that.orderSource &&
                 rewardsId == that.rewardsId &&
-                Objects.equals(beverages, that.beverages) &&
-                Objects.equals(kitchenOrders, that.kitchenOrders) &&
+                Objects.equals(homerobots, that.homerobots) &&
+                Objects.equals(prorobotOrders, that.prorobotOrders) &&
                 eventType == that.eventType;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, orderSource, rewardsId, beverages, kitchenOrders, eventType);
+        return Objects.hash(id, orderSource, rewardsId, homerobots, prorobotOrders, eventType);
     }
 
     public String getId() {
@@ -103,11 +103,11 @@ public class OrderPlacedEvent {
 
     public void setRewardsId(String rewardsId) { this.rewardsId = rewardsId; }
 
-    public void setBeverages(List<LineItem> beverages) {
-        this.beverages = beverages;
+    public void setBeverages(List<LineItem> homerobots) {
+        this.homerobots = homerobots;
     }
 
-    public void setKitchenOrders(List<LineItem> kitchenOrders) {
-        this.kitchenOrders = kitchenOrders;
+    public void setProrobotOrders(List<LineItem> prorobotOrders) {
+        this.prorobotOrders = prorobotOrders;
     }
 }

@@ -30,9 +30,9 @@ function displayCurrentOrder(){
     $('#current_order').empty();
 
     // get the current order
-    let beverages = $('#order_form').find('input[name="beverages"]').serializeArray();
-    let kitchen = $('#order_form').find('input[name="kitchen"]').serializeArray();
-    let current_items = beverages.concat(kitchen);
+    let homerobots = $('#order_form').find('input[name="homerobots"]').serializeArray();
+    let prorobot = $('#order_form').find('input[name="prorobot"]').serializeArray();
+    let current_items = homerobots.concat(prorobot);
 
     if(current_items.length >= 1){
         current_items.forEach(function(e){
@@ -62,41 +62,41 @@ $('#item_form').submit(function( event ) {
 
     let item_to_add = { 'item' : item, 'name': name, 'price': price};
 
-    if(item_type == 'beverage'){
-        console.log('adding beverage');
-        let beverages = $('#order_form').find('input[name="beverages"]').serializeArray();
-        if(beverages.length === 0){
+    if(item_type == 'homerobot'){
+        console.log('adding homerobot');
+        let homerobots = $('#order_form').find('input[name="homerobots"]').serializeArray();
+        if(homerobots.length === 0){
             $('<input>').attr({
                 type: 'hidden',
-                id: 'beverages-0',
-                name: 'beverages',
+                id: 'homerobots-0',
+                name: 'homerobots',
                 value: JSON.stringify(item_to_add)
             }).appendTo('form');
-        }else if(beverages.length >= 1){
+        }else if(homerobots.length >= 1){
             $('<input>').attr({
                 type: 'hidden',
-                id: 'beverages-' + beverages.length++,
-                name: 'beverages',
+                id: 'homerobots-' + homerobots.length++,
+                name: 'homerobots',
                 value: JSON.stringify(item_to_add)
             }).appendTo('form');
         }
         console.log('added');
 
-    }else if(item_type == 'kitchen'){
-        console.log('adding kitchen item');
-        var kitchen = $('#order_form').find('input[name="kitchen"]').serializeArray();
-        if(kitchen.length === 0){
+    }else if(item_type == 'prorobot'){
+        console.log('adding prorobot item');
+        var prorobot = $('#order_form').find('input[name="prorobot"]').serializeArray();
+        if(prorobot.length === 0){
             $('<input>').attr({
                 type: 'hidden',
-                id: 'kitchen-0',
-                name: 'kitchen',
+                id: 'prorobot-0',
+                name: 'prorobot',
                 value: JSON.stringify(item_to_add)
             }).appendTo('form');
-        }else if(kitchen.length >= 1){
+        }else if(prorobot.length >= 1){
             $('<input>').attr({
                 type: 'hidden',
-                id: 'kithen-' + kitchen.length++,
-                name: 'kitchen',
+                id: 'kithen-' + prorobot.length++,
+                name: 'prorobot',
                 value: JSON.stringify(item_to_add)
             }).appendTo('form');
         }
@@ -118,15 +118,15 @@ $('#item_form').submit(function( event ) {
 /* Modal popup - submit order */
 $("#order_form").submit(function(event){
     console.log("order submitted");
-    let beverages = $('#order_form').find('input[name="beverages"]').map(function(){
+    let homerobots = $('#order_form').find('input[name="homerobots"]').map(function(){
         return JSON.parse($(this).val());
     }).get();
-    let kitchen = $('#order_form').find('input[name="kitchen"]').map(function(){
+    let prorobot = $('#order_form').find('input[name="prorobot"]').map(function(){
         return JSON.parse($(this).val());
     }).get();
 
     // if the user clicks "Place Order" before "Add"
-    if((beverages === undefined || beverages.length == 0 ) && (kitchen === undefined || kitchen.length == 0)){
+    if((homerobots === undefined || homerobots.length == 0 ) && (prorobot === undefined || prorobot.length == 0)){
 
         let item_type = $('#item_form').find('input[name="item_type"]').val();
         let item = $('#item_form').find('input[name="item"]').val();
@@ -134,11 +134,11 @@ $("#order_form").submit(function(event){
         let price = $('#item_form').find('input[name="item_price"]').val();
         let item_to_add = { 'name': name, 'item': item, 'price': price };
 
-        if(item_type == 'beverage'){
-            console.log('adding beverage');
-            beverages.push(item_to_add);
-        }else if(item_type == 'kitchen'){
-            kitchen.push(item_to_add);
+        if(item_type == 'homerobot'){
+            console.log('adding homerobot');
+            homerobots.push(item_to_add);
+        }else if(item_type == 'prorobot'){
+            prorobot.push(item_to_add);
         }
 
     }
@@ -151,19 +151,19 @@ $("#order_form").submit(function(event){
     order.orderSource = 'WEB';
     order.storeId = storeId;
     order.rewardsId = rewards_id;
-    order.baristaItems = [];
-    order.kitchenItems = []
+    order.homerobotItems = [];
+    order.prorobotItems = []
 
-    if(beverages.length >= 1){
-        for (i = 0; i < beverages.length; i++) {
-            console.log(beverages[i]);
-            order.baristaItems.push(beverages[i]);
+    if(homerobots.length >= 1){
+        for (i = 0; i < homerobots.length; i++) {
+            console.log(homerobots[i]);
+            order.homerobotItems.push(homerobots[i]);
         }
     }
-    if(kitchen.length >= 1){
-        for (i = 0; i < kitchen.length; i++) {
-            console.log(kitchen[i]);
-            order.kitchenItems.push(kitchen[i]);
+    if(prorobot.length >= 1){
+        for (i = 0; i < prorobot.length; i++) {
+            console.log(prorobot[i]);
+            order.prorobotItems.push(prorobot[i]);
         }
     }
 
@@ -183,10 +183,10 @@ $("#order_form").submit(function(event){
     })
         .done(function() {
             console.log( "done" );
-            $('#order_form').find('input[name="beverages"]').map(function () {
+            $('#order_form').find('input[name="homerobots"]').map(function () {
                 $(this).remove();
             })
-            $('#order_form').find('input[name="kitchen"]').map(function () {
+            $('#order_form').find('input[name="prorobot"]').map(function () {
                 $(this).remove();
             })
         })
@@ -317,7 +317,7 @@ function line(state) {
     var preparedBy = state.madeBy;
     /*
       if (state.item) {
-          barista = state.item.preparedBy;
+          homerobot = state.item.preparedBy;
       }
     */
     return "<tr id='" + id + "'>" +
@@ -342,7 +342,7 @@ function displayFriendlyItem(item){
     let result;
 
     switch(item){
-        // beverages
+        // homerobots
         case "CP0FB2_BLACK":
             console.log("Black CP0FB2");
             result = "BLACK HOMEROBOT CP0FB2"
@@ -363,7 +363,7 @@ function displayFriendlyItem(item){
             console.log("CS92C3");
             result = "CS92C3 HOMEROBOT ";
             break;
-        // kitchen
+        // prorobot
         case "FAMKD8D8":
             console.log("FAMKD8D8");
             result = "FAMKD8D8 PROROBOT";
