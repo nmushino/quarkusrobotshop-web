@@ -343,9 +343,9 @@ function displayFriendlyItem(item){
 
     switch(item){
         // beverages
-        case "COFFEE_BLACK":
-            console.log("Black Coffee");
-            result = "Black Coffee"
+        case "CP0FB2_BLACK":
+            console.log("Black CP0FB2");
+            result = "Black CP0FB2"
             break;
         case "COFFEE_WITH_ROOM":
             console.log("Coffee with room");
