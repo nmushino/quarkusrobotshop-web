@@ -5,8 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.quarkusrobotshop.domain.*;
 import io.quarkus.runtime.annotations.RegisterForReflection;
 
-import java.util.Optional;
-
 @RegisterForReflection
 public class DashboardUpdate {
 

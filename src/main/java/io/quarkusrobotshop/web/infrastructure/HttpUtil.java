@@ -2,9 +2,6 @@ package io.quarkusrobotshop.web.infrastructure;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.quarkus.runtime.annotations.RegisterForReflection;
-import io.quarkus.runtime.annotations.StaticInitSafe;
-import org.eclipse.microprofile.config.inject.ConfigProperty;
-import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
