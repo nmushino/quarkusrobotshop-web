@@ -2,6 +2,8 @@ package io.quarkusrobotshop.web.infrastructure;
 
 import io.quarkus.test.Mock;
 import io.quarkusrobotshop.web.domain.commands.PlaceOrderCommand;
+import io.quarkusrobotshop.web.infrastructure.OrderService;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

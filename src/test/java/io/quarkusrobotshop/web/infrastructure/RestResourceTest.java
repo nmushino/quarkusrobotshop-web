@@ -3,6 +3,8 @@ package io.quarkusrobotshop.web.infrastructure;
 import io.quarkus.test.junit.QuarkusMock;
 import io.quarkus.test.junit.QuarkusTest;
 import io.quarkusrobotshop.web.domain.commands.PlaceOrderCommand;
+import io.quarkusrobotshop.web.infrastructure.OrderService;
+
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

@@ -6,6 +6,7 @@ import io.quarkusrobotshop.domain.Item;
 import io.quarkusrobotshop.domain.OrderLineItem;
 import io.quarkusrobotshop.domain.OrderSource;
 import io.quarkusrobotshop.web.domain.commands.PlaceOrderCommand;
+import io.quarkusrobotshop.web.infrastructure.OrderService;
 import io.quarkusrobotshop.web.infrastructure.testsupport.KafkaTestResource;
 import io.smallrye.reactive.messaging.connectors.InMemoryConnector;
 import io.smallrye.reactive.messaging.connectors.InMemorySink;

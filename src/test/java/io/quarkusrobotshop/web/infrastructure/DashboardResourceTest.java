@@ -5,6 +5,7 @@ import io.quarkus.test.junit.QuarkusTest;
 import io.quarkusrobotshop.domain.Item;
 import io.quarkusrobotshop.domain.OrderStatus;
 import io.quarkusrobotshop.web.domain.DashboardUpdate;
+import io.quarkusrobotshop.web.infrastructure.JsonUtil;
 import io.quarkusrobotshop.web.infrastructure.testsupport.KafkaTestResource;
 import io.smallrye.reactive.messaging.connectors.InMemoryConnector;
 import io.smallrye.reactive.messaging.connectors.InMemorySource;
