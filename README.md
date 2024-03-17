@@ -7,7 +7,7 @@ If you have not used Quarkus before: https://quarkus.io/
 
 # quarkuscofeeshop-web
 
-This is the web frontend for the Quarkus Coffeeshop Application
+This is the web frontend for the Quarkus robotshop Application
 
 Orders can be placed through the web UI or a REST endpoint "/order"
 

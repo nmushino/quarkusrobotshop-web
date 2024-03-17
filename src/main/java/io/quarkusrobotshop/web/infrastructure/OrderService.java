@@ -15,7 +15,7 @@ import javax.inject.Inject;
 import java.util.concurrent.CompletableFuture;
 
 import static io.quarkusrobotshop.web.infrastructure.JsonUtil.toJson;
-import static io.quarkusrobotshop.web.infrastructure.HttpUtil.sendHttp;
+//import static io.quarkusrobotshop.web.infrastructure.HttpUtil.sendHttp;
 
 @RegisterForReflection
 @ApplicationScoped
