@@ -1,7 +1,7 @@
 DROP SCHEMA IF EXISTS robotshop CASCADE ;
 CREATE SCHEMA robotshop AUTHORIZATION robotshopuser;
 alter table if exists robotshop.LineItems
-    drop constraint if exists FK6fhxopytha3nnbpbfmpiv4xgn;
+drop constraint if exists FK6fhxopytha3nnbpbfmpiv4xgn;
 drop table if exists robotshop.LineItems cascade;
 drop table if exists robotshop.Orders cascade;
 drop table if exists robotshop.OutboxEvent cascade;
