@@ -257,13 +257,13 @@ nav a.active {
     margin-top:75px;
 }
 /*--------------------------------------- MENU ---------------------------------------------------*/
-.menu {
+.product {
     background:#f4f4f4;
 }
-.menu-lists {
+.product-lists {
     margin-top:75px;
 }
-.menu-lists .tab-content {
+.product-lists .tab-content {
     margin-top:50px;
 }
 .nav-tabs {
@@ -299,10 +299,10 @@ nav a.active {
     height:2px;
     background:#c02628;;
 }
-.menu-item .name-price-wrap {
+.product-item .name-price-wrap {
     border-bottom: 1px dotted #ddd;
 }
-.menu-item .name-price-wrap:after {
+.product-item .name-price-wrap:after {
     content: '';
     display: block;
     clear: both;

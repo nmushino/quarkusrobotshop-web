@@ -7,23 +7,23 @@ import java.util.Objects;
 import java.util.StringJoiner;
 
 @RegisterForReflection
-public class MenuItem {
+public class ProductItem {
 
     Item item;
 
     BigDecimal price;
 
-    public MenuItem() {
+    public ProductItem() {
     }
 
-    public MenuItem(Item item, BigDecimal price) {
+    public ProductItem(Item item, BigDecimal price) {
         this.item = item;
         this.price = price;
     }
 
     @Override
     public String toString() {
-        return new StringJoiner(", ", MenuItem.class.getSimpleName() + "[", "]")
+        return new StringJoiner(", ", ProductItem.class.getSimpleName() + "[", "]")
                 .add("item=" + item)
                 .add("price=" + price)
                 .toString();
@@ -33,9 +33,9 @@ public class MenuItem {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        MenuItem menuItem = (MenuItem) o;
-        return item == menuItem.item &&
-                Objects.equals(price, menuItem.price);
+        ProductItem productItem = (ProductItem) o;
+        return item == productItem.item &&
+                Objects.equals(price, productItem.price);
     }
 
     @Override

@@ -393,12 +393,12 @@ function displayFriendlyStatus(status){
     let result;
     switch(status){
         case "PLACE_ORDER":
-            console.log("place order");
+            console.log("Place Order");
             result = "Place Order";
             break;
         case "IN_PROGRESS":
             console.log("In progress");
-            result = "In progress";
+            result = "In Progress";
             break;
         case "FULFILLED":
             console.log("Ready!");

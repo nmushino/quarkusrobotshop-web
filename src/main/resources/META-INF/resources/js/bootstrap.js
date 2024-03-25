@@ -784,7 +784,7 @@ if (typeof jQuery === 'undefined') {
     return $parent && $parent.length ? $parent : $this.parent()
   }
 
-  function clearMenus(e) {
+  function clearProducts(e) {
     if (e && e.which === 3) return
     $(backdrop).remove()
     $(toggle).each(function () {
@@ -813,7 +813,7 @@ if (typeof jQuery === 'undefined') {
     var $parent  = getParent($this)
     var isActive = $parent.hasClass('open')
 
-    clearMenus()
+    clearProducts()
 
     if (!isActive) {
       if ('ontouchstart' in document.documentElement && !$parent.closest('.navbar-nav').length) {
@@ -821,7 +821,7 @@ if (typeof jQuery === 'undefined') {
         $(document.createElement('div'))
           .addClass('dropdown-backdrop')
           .insertAfter($(this))
-          .on('click', clearMenus)
+          .on('click', clearProducts)
       }
 
       var relatedTarget = { relatedTarget: this }
@@ -860,7 +860,7 @@ if (typeof jQuery === 'undefined') {
     }
 
     var desc = ' li:not(.disabled):visible a'
-    var $items = $parent.find('.dropdown-menu' + desc)
+    var $items = $parent.find('.dropdown-product' + desc)
 
     if (!$items.length) return
 
@@ -906,11 +906,11 @@ if (typeof jQuery === 'undefined') {
   // ===================================
 
   $(document)
-    .on('click.bs.dropdown.data-api', clearMenus)
+    .on('click.bs.dropdown.data-api', clearProducts)
     .on('click.bs.dropdown.data-api', '.dropdown form', function (e) { e.stopPropagation() })
     .on('click.bs.dropdown.data-api', toggle, Dropdown.prototype.toggle)
     .on('keydown.bs.dropdown.data-api', toggle, Dropdown.prototype.keydown)
-    .on('keydown.bs.dropdown.data-api', '.dropdown-menu', Dropdown.prototype.keydown)
+    .on('keydown.bs.dropdown.data-api', '.dropdown-product', Dropdown.prototype.keydown)
 
 }(jQuery);
 
@@ -2000,7 +2000,7 @@ if (typeof jQuery === 'undefined') {
       .parents('li')
       .addClass('active')
 
-    if (active.parent('.dropdown-menu').length) {
+    if (active.parent('.dropdown-product').length) {
       active = active
         .closest('li.dropdown')
         .addClass('active')
@@ -2084,7 +2084,7 @@ if (typeof jQuery === 'undefined') {
 
   Tab.prototype.show = function () {
     var $this    = this.element
-    var $ul      = $this.closest('ul:not(.dropdown-menu)')
+    var $ul      = $this.closest('ul:not(.dropdown-product)')
     var selector = $this.data('target')
 
     if (!selector) {
@@ -2131,7 +2131,7 @@ if (typeof jQuery === 'undefined') {
     function next() {
       $active
         .removeClass('active')
-        .find('> .dropdown-menu > .active')
+        .find('> .dropdown-product > .active')
           .removeClass('active')
         .end()
         .find('[data-toggle="tab"]')
@@ -2149,7 +2149,7 @@ if (typeof jQuery === 'undefined') {
         element.removeClass('fade')
       }
 
-      if (element.parent('.dropdown-menu').length) {
+      if (element.parent('.dropdown-product').length) {
         element
           .closest('li.dropdown')
             .addClass('active')

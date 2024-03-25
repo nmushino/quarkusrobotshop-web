@@ -52,12 +52,10 @@ public class DashboardResource {
         
         if (broadcaster == null) {
             broadcaster = sse.newBroadcaster();
-
         } else {
             RestResource rest = new RestResource();
             rest.broadcast("message", sse, broadcaster);
         }
-        
         return broadcaster;
     }
 }
